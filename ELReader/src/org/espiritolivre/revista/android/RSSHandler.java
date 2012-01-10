@@ -1,4 +1,4 @@
-package com.espacoliberdade.elreader;
+package org.espiritolivre.revista.android;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

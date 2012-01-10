@@ -1,4 +1,6 @@
-package com.espacoliberdade.elreader;
+package org.espiritolivre.revista.android;
+
+import org.espiritolivre.revista.android.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,37 +19,37 @@ public class MainActivity extends Activity implements OnClickListener  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        // Aqui nós declaramos todos os botões da interface que vão ter
-        // uma ação associada a eles
+        // Aqui nï¿½s declaramos todos os botï¿½es da interface que vï¿½o ter
+        // uma aï¿½ï¿½o associada a eles
         
-        // Botão Últimos artigos
+        // Botï¿½o ï¿½ltimos artigos
         Button thebtnLatestArticles = (Button)findViewById(R.id.btnLatestArticles);
         thebtnLatestArticles.setOnClickListener(this);
         
-        // Botão Últimos comentários
+        // Botï¿½o ï¿½ltimos comentï¿½rios
         Button thebtnLatestComments = (Button)findViewById(R.id.btnLatestComments);
         thebtnLatestComments.setOnClickListener(this);
         
-        // Botão Autores
+        // Botï¿½o Autores
         Button thebtnAuthors = (Button)findViewById(R.id.btnAuthors);
         thebtnAuthors.setOnClickListener(this);
         
-        // Botão Sobre
+        // Botï¿½o Sobre
         Button thebtnAbout = (Button)findViewById(R.id.btnAbout);
         thebtnAbout.setOnClickListener(this);
         
     }
 
-    // E aqui declaramos as ações num loop switch:
+    // E aqui declaramos as aï¿½ï¿½es num loop switch:
     
-    // Atenção se você quiser modificar: os dois primeiros cases abaixo
+    // Atenï¿½ï¿½o se vocï¿½ quiser modificar: os dois primeiros cases abaixo
     // funcionam de forma muito similar: eles chamam a tela da activity
-    // FeedReader e passam a ela dois parâmetros: feedTitle e feedURL.
-    // O primeiro é o nome do feed, por exemplo "Últimos artigos" e o
-    // segundo é a sua URL. Se quiser adaptar para os seu site, apenas
-    // modifique essas informações com os dados corretos! Não mexa no resto!
-    // Se quiser adicionar mais botões, declare-os no main.xml, siga o
-    // exemplo acima de declaração de Button e adicione um novo case abaixo.
+    // FeedReader e passam a ela dois parï¿½metros: feedTitle e feedURL.
+    // O primeiro ï¿½ o nome do feed, por exemplo "ï¿½ltimos artigos" e o
+    // segundo ï¿½ a sua URL. Se quiser adaptar para os seu site, apenas
+    // modifique essas informaï¿½ï¿½es com os dados corretos! Nï¿½o mexa no resto!
+    // Se quiser adicionar mais botï¿½es, declare-os no main.xml, siga o
+    // exemplo acima de declaraï¿½ï¿½o de Button e adicione um novo case abaixo.
 
 public void startTheActivity(String theTitle, String theURL) {
 	Intent i = new Intent(MainActivity.this, FeedReaderActivity.class);
@@ -59,17 +61,17 @@ public void startTheActivity(String theTitle, String theURL) {
 public void onClick(View v) {
 	// TODO Auto-generated method stub
 	   switch(v.getId()) {
-	   case R.id.btnLatestArticles: // Botão últimos artigos
-		   startTheActivity("Últimos artigos", "http://espacoliberdade.blog.br/blog/feed/");
+	   case R.id.btnLatestArticles: // Botï¿½o ï¿½ltimos artigos
+		   startTheActivity("ï¿½ltimos artigos", "http://espacoliberdade.blog.br/blog/feed/");
 		   break; 
-	   case R.id.btnLatestComments: // Botão Últimos comentários
-		   startTheActivity("Últimos comentários", "http://espacoliberdade.blog.br/blog/comments/feed/");
+	   case R.id.btnLatestComments: // Botï¿½o ï¿½ltimos comentï¿½rios
+		   startTheActivity("ï¿½ltimos comentï¿½rios", "http://espacoliberdade.blog.br/blog/comments/feed/");
 		   break;
-	   case R.id.btnAuthors: // Botão Autores
+	   case R.id.btnAuthors: // Botï¿½o Autores
 		   Intent iAuth = new Intent(MainActivity.this, AuthorsActivity.class);
 		   startActivity(iAuth);
 		   break;
-	   case R.id.btnAbout: // Botão Sobre
+	   case R.id.btnAbout: // Botï¿½o Sobre
 		   Intent iAbout = new Intent(MainActivity.this, AboutActivity.class);
 		   startActivity(iAbout);
 		   break;
@@ -77,7 +79,7 @@ public void onClick(View v) {
 	
 }
 
-// Agora vamos gerenciar o código/mensagem de erro do FeedReader quando ele retornar
+// Agora vamos gerenciar o cï¿½digo/mensagem de erro do FeedReader quando ele retornar
 
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent intent) {

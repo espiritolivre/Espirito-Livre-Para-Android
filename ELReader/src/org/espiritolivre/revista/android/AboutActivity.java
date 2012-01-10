@@ -1,4 +1,6 @@
-package com.espacoliberdade.elreader;
+package org.espiritolivre.revista.android;
+
+import org.espiritolivre.revista.android.R;
 
 import android.app.Activity;
 import android.content.pm.PackageInfo;
@@ -13,7 +15,7 @@ public class AboutActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
         
-        // Obtendo informações da versão do aplicativo a partir
+        // Obtendo informaï¿½ï¿½es da versï¿½o do aplicativo a partir
         // do AndroidManifest.xml
         
         PackageInfo pinfo;
@@ -23,7 +25,7 @@ public class AboutActivity extends Activity {
 	        
 	        // Agora vamos colocar isso no textview correspondente
 	        TextView tvVersion = (TextView) findViewById(R.id.about_version);
-	        tvVersion.setText("Versão " + VersionName + "\n");
+	        tvVersion.setText("Versï¿½o " + VersionName + "\n");
 		} catch (NameNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

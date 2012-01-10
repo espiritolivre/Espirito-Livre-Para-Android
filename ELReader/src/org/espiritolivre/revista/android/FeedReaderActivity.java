@@ -1,4 +1,4 @@
-package com.espacoliberdade.elreader;
+package org.espiritolivre.revista.android;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -11,6 +11,8 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+
+import org.espiritolivre.revista.android.R;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -36,34 +38,34 @@ public class FeedReaderActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.feedreader);
         
-        // As versões do Android superiores à 3  implementam um  modo
+        // As versï¿½es do Android superiores ï¿½ 3  implementam um  modo
         // protegido que impede o sistema de acessar  discos e a rede
         // na atividade principal. Assim vamos desabilitar o recurso.
-        // O correto, no entanto, seria utilizarmos atividades assín-
-        // cronas. Note que esta declaração não é necessária se   es-
-        // tamos desenvolvendo para as versões 1.x e 2.x , ou   seja,
-        // você deve comentar as duas linhas abaixo se   tiver  essas
-        // versões como alvo.
+        // O correto, no entanto, seria utilizarmos atividades assï¿½n-
+        // cronas. Note que esta declaraï¿½ï¿½o nï¿½o ï¿½ necessï¿½ria se   es-
+        // tamos desenvolvendo para as versï¿½es 1.x e 2.x , ou   seja,
+        // vocï¿½ deve comentar as duas linhas abaixo se   tiver  essas
+        // versï¿½es como alvo.
         
         //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitNetwork().build();
         //StrictMode.setThreadPolicy(policy);
         
-        // Obtendo a URL e o título do feed
+        // Obtendo a URL e o tï¿½tulo do feed
         Bundle extras = getIntent().getExtras();
         // Temos extras?
         if (extras == null) {
         	return;
         }
-        // Colocando o título e a URL em variáveis
+        // Colocando o tï¿½tulo e a URL em variï¿½veis
         String theFeedTitle = extras.getString("feedTitle");
         String theFeedURL = extras.getString("feedURL");
-        // Última verificação e exibição do feed
+        // ï¿½ltima verificaï¿½ï¿½o e exibiï¿½ï¿½o do feed
         if (theFeedTitle != null && theFeedURL != null) {
         	
         	theLastFeed = theFeedTitle;
         	
-        	// Aqui começa a implementação do leitor RSS!
-        	// Créditos aos tutoriais de http://android-er.blogspot.com/
+        	// Aqui comeï¿½a a implementaï¿½ï¿½o do leitor RSS!
+        	// Crï¿½ditos aos tutoriais de http://android-er.blogspot.com/
         	        	
         	// No manipulador a seguir vamos obter o feed RSS de fr_URL
         	
@@ -77,9 +79,9 @@ public class FeedReaderActivity extends ListActivity {
         		InputSource myInputSource = new InputSource(rssURL.openStream());
         		myXMLReader.parse(myInputSource);
         		
-        		// Modificação versão 2012.0.4
+        		// Modificaï¿½ï¿½o versï¿½o 2012.0.4
         		myRSSFeed = myRSSHandler.getFeed();
-        		// Fim da modificação
+        		// Fim da modificaï¿½ï¿½o
         		
         	} catch (MalformedURLException e) {
         		e.printStackTrace();
@@ -95,7 +97,7 @@ public class FeedReaderActivity extends ListActivity {
         		
         	}
         	
-        	// Modificação versão 2012.0.3
+        	// Modificaï¿½ï¿½o versï¿½o 2012.0.3
         	if (myRSSFeed!=null)
         	 {
         	  TextView feedTitle = (TextView)findViewById(R.id.feedtitle);
@@ -106,7 +108,7 @@ public class FeedReaderActivity extends ListActivity {
         	  feedDescription.setText(myRSSFeed.getDescription());
         	  feedPubdate.setText(myRSSFeed.getPubdate());
         	  feedLink.setText(myRSSFeed.getLink());
-    		// Fim da modificação
+    		// Fim da modificaï¿½ï¿½o
         	
         	  ArrayAdapter<RSSItem> adapter =
         			   new ArrayAdapter<RSSItem>(this,
@@ -135,7 +137,7 @@ public class FeedReaderActivity extends ListActivity {
     @Override
     public void finish(){
     	Intent data = new Intent();
-    	data.putExtra("returnKey", "Último feed lido: " + theLastFeed);
+    	data.putExtra("returnKey", "ï¿½ltimo feed lido: " + theLastFeed);
     	setResult(RESULT_OK, data);
     	super.finish();
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.espacoliberdade.elreader"
+    package="org.espiritolivre.revista.android"
     android:versionCode="1"
-    android:versionName="2012.0.4" >
+    android:versionName="0.1" >
 
     <uses-sdk android:minSdkVersion="7" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -22,7 +22,7 @@
         <activity android:name=".AboutActivity"></activity>
         <activity android:name=".FeedReaderActivity"></activity>
         <activity android:name=".ShowDetailsActivity"></activity>
-        <activity android:name=".AuthorsActivity"></activity>
+        <activity android:name="org.espiritolivre.revista.android.AuthorsActivity"></activity>
     </application>
     
 </manifest>

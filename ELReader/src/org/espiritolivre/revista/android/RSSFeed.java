@@ -1,4 +1,4 @@
-package com.espacoliberdade.elreader;
+package org.espiritolivre.revista.android;
 
 import java.util.List;
 import java.util.Vector;

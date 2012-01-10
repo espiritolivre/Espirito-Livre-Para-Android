@@ -1,4 +1,6 @@
-package com.espacoliberdade.elreader;
+package org.espiritolivre.revista.android;
+
+import org.espiritolivre.revista.android.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,7 +18,7 @@ public class AuthorsActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.authors);
      
-        // Vamos criar um botão para cada autor do site
+        // Vamos criar um botï¿½o para cada autor do site
         
         Button btnKleberson = (Button)findViewById(R.id.btnAuthKleberson);
         btnKleberson.setOnClickListener(this);
@@ -35,7 +37,7 @@ public class AuthorsActivity extends Activity implements OnClickListener {
         
     }
 
-// Não é elegante mas funciona...    
+// Nï¿½o ï¿½ elegante mas funciona...    
 public void startTheActivity2(String theTitle, String theURL) {
     	Intent i = new Intent(AuthorsActivity.this, FeedReaderActivity.class);
     	i.putExtra("feedTitle", theTitle);
@@ -53,9 +55,9 @@ public void onClick(View v) {
 		//startActivityForResult(i1, REQUEST_CODE);
 		break; 
 	case R.id.btnAuthAndre:
-		startTheActivity2("André Machado", "http://espacoliberdade.blog.br/blog/author/andremachado/feed");
+		startTheActivity2("Andrï¿½ Machado", "http://espacoliberdade.blog.br/blog/author/andremachado/feed");
 		//Intent i2 = new Intent(AuthorsActivity.this, FeedReaderActivity.class);
-		//i2.putExtra("feedTitle", "André Machado");
+		//i2.putExtra("feedTitle", "Andrï¿½ Machado");
 		//i2.putExtra("feedURL", "http://espacoliberdade.blog.br/blog/author/andremachado/feed");
 		//startActivityForResult(i2, REQUEST_CODE);
 		break;
