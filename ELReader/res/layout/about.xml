@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView 
+      android:id="@+id/about_appname"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      android:text="@string/app_name"/>
+
+    <TextView 
+      android:id="@+id/about_version"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/version_info"/>    
+    
+    <TextView 
+      android:id="@+id/about_cnotice"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/copyleft_notice"/>
+
+    <TextView 
+      android:id="@+id/about_license"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:textSize="8sp"
+      android:width="0dip"
+      android:text="@string/license_information"/>
+    
+    <TextView 
+      android:id="@+id/social_links"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:width="0dip"
+      android:autoLink="web"
+      android:text="@string/social_links"/>
+    
+</LinearLayout>

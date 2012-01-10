@@ -1,0 +1,127 @@
+Perguntas e respostas sobre o aplicativo do Espaço Liberdade para Android (FAQ)
+
+1. Usuários finais
+==================
+
+1.1. O que é o aplicativo do Espaço Liberdade para Android?
+-----------------------------------------------------------
+R: O aplicativo do Espaço Liberdade para Android é um programa desenvolvido para
+o sistema operacional móvel do Google que permite ao usuário acompanhar o resumo
+dos últimos artigos e comentários postados no site, bem como os artigos de  cada
+autor, de uma maneira fácil e rápida.
+
+1.2. Como ele se diferencia de um leitor RSS comum (como aquele que já existe no
+Android) ?
+--------------------------------------------------------------------------------
+R: Embora o aplicativo utilize-se da tecnologia RSS, ele concentra em uma inter-
+face simples as opções para ler vários feeds, liberando o usuário  de  cadastrar
+manualmente suas URLs individuais.
+
+1.3. Quais os requisitos mínimos para utilizar o aplicativo?
+------------------------------------------------------------
+R: O aplicativo requer um smartphone ou tablet com sistema  operacional  Android
+versão 2.1 ou superior ou 4.0 ou superior com conexão  à  Internet  via wi-fi ou
+model 3G.
+
+1.4. Por que existem dois aplicativos disponíveis?
+--------------------------------------------------
+R: A partir da versão 3.0 (Honeycomb), a Google introduziu  várias  mudanças  na
+API do Android, o que torna os aplicativos desenvolvidos para essas versões  in-
+compatíveis. Nós desenvolvemos o aplicativo para a versão 2.1 do sistema pois  a
+série 2.x ainda é bastante popular e para a versão 4 para aqueles que desejam a-
+proveitar melhor os novos recursos da API.
+
+1.5. Por que não há uma versão para o Android 3.0?
+--------------------------------------------------
+R: No momento, estamos avaliando a demanda e o potencial do aplicativo e podere-
+mos lançar uma versão para o Android 3.0 caso haja muito interesse dos leitores.
+
+1.6. Vocês vão lançar aplicativos para o iOS (iPhone, iPad) e o Windows Phone?
+------------------------------------------------------------------------------
+R: Por sermos um blog voltado exclusivamente à temática do software  livre,  não
+temos interesse em lançar versões do aplicativo para plataformas   proprietárias
+como os sistemas da Apple ou da Microsoft.
+
+1.7. Help! Não consigo instalar o aplicativo no meu celular!
+------------------------------------------------------------
+R: Se ele atende aos requisitos mínimos, você deve  habilitar  a  instalação  de
+aplicativos de fontes desconhecidas. Para isso, clique no menu Configurações, vá
+até Aplicativos e marque a opção "Fontes desconhecidas", dando OK na mensagem de
+confirmação. Se tiver outro problema que não este, mande-nos um e-mail.
+
+2. Desenvolvedores e blogueiros
+===============================
+
+2.1. Eu posso modificar o aplicativo do Espaço Liberdade e colocar nele os  con-
+teúdos do meu blog/site?
+--------------------------------------------------------------------------------
+R: Sim! O aplicativo está licenciado sob os termos da licença GPL, o que permite
+sua modificação desde que observados os termos da Licença.
+
+2.2. O que devo observar ao distribuir uma versão modificiada do aplicativo?
+----------------------------------------------------------------------------
+R: Basicamente você deve obedecer aos termos da GPL v.3 que, em  resumo,   dizem
+que você deve disponibilizar o código-fonte do aplicativo,  sem  custos, para os
+usuários interessados. Além disso, solicitamos que você mantenha os créditos dos
+desenvolvedores originais (se não puder mantê-los no aplicativo, faça uma menção
+na página de download do mesmo).
+
+2.3. Eu não posso simplesmente distribuir o arquivo  binário e colocar  um  link
+para a página de vocês com o código-fonte?
+--------------------------------------------------------------------------------
+R: Não, pois ao modificar o aplicativo você estará criando um trabalho  derivado
+do mesmo e suas modificações também estarão sob a GPL.
+
+2.4. Do que eu preciso para modificar o aplicativo?
+---------------------------------------------------
+R: Primeiro, é desejável que você tenha no mínimo um leve  conhecimento  sobre a
+linguagem Java e sobre desenvolvimento para Android.   Se você nunca desenvolveu
+para o sistema móvel antes, sugerimos fortemente que você estude um pouco  antes
+de   colocar  a  mão  na  massa.   Se preferir, siga  o   tutorial   do     site
+http://www.felipesilveira.com.br/desenvolvendo-para-android/ e tente recriar   o
+aplicativo de exemplo antes de começar.
+
+Em relação aos softwares, você vai precisar do seguinte:
+
+   * Eclipse (Java) http://www.eclipse.org/downloads/
+   * Android SDK    http://developer.android.com/sdk/index.html
+   * Plugin ADT     http://developer.android.com/sdk/eclipse-adt.html
+   * JRE            http://jdk7.java.net/download.html
+   * JDK            http://jdk7.java.net/download.html
+ 
+Observação: embora a documentação do Eclipse diga que o mesmo não precisa do JDK
+este é necessário para o SDK do Android. Além disso, certifique-se  de  instalar
+versões da mesma arquitetura, isto é, se você baixou o Eclipse de 64-bit, insta-
+le o JRE e o JDK de 64-bit.
+
+Oficialmente, o Eclipse é distribuído como um arquivo compactado. Se não  houver
+um pacote pré-compilado para ele nos repositórios de sua distribuição,  baixe  o
+arquivo compactado e extraia-o em sua pasta pessoal ou em /opt.
+
+2.5. Onde ou no que eu mexo no código-fonte que eu baixei?
+----------------------------------------------------------
+R: Você evidentemente não precisa e não vai mexer em todas as pastas e  arquivos
+que estão no código-fonte. Após abrir (ou importar) o projeto para seu  Eclipse,
+trabalhe nas seguintes pastas e arquivos:
+
+  * ELReader/src/com/espacoliberdade/elreader (ou, na nomenclatura Eclipse,
+    ELReader/src/com.espacoliberdade.elreader) - é aqui que está o  código-fonte
+    principal do aplicativo. Os arquivos terminados em *Activity.java  são    as
+    activities Android e os arquivos RSSFeed.java, RSSHandler.java e RSSItem.ja-
+    va são os responsáveis por manipular os feeds RSS (não mexa nesses últimos 3
+    arquivos a menos que saiba o que está fazendo).
+  * ELReader/res/layout - Aqui ficam os arquivos .xml que definem o layout e  os
+    elementos visuais de casa tela/activity. Você pode edutá-los tanto à unha ou
+    no editor visual integrado no Eclipse.
+  * ELReader/res/values/strings.xml - aqui ficam armazenados os textos  que  são
+    exibidos nas várias telas do projeto.
+  * ELReader/AndroidManifest - esse arquivo armazenas as configurações gerais do
+    aplicativo, como seu nome, a versão, as activities, entre muitas outras  in-
+    formações.
+
+2.6. Como faço para mudar o ícone do aplicativo?
+------------------------------------------------
+R: Você precisará criar três arquivos .png com as seguintes dimensões:    36x36,
+48x48 e 72x72. Eles devem ser colocados respectivamente nas pastas
+ELReader/res/drawable-ldpi, ELReader/res/drawable-mdpi e  ELReader/res/drawable-
+hdpi.                 

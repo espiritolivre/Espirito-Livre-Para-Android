@@ -1,0 +1,23 @@
+Changelog para o Espaço Liberdade Reader
+
+2012.0.0 (22/12/2011)
+	- Interface da tela inicial;
+2012.0.1 (22/12/2012)
+	- Adicionada a tela de créditos;
+	- Adicionada a ação ao botão da tela inicial que chama a tela de créditos;
+2012.0.2 (23/12/2011)
+	- CORRIGIDO: Agora a versão do aplicativo exibida na tela Sobre
+	 é recuperada a partir do AndroidManifest.xml;
+	- Adicionada a permissão para o aplicativo acessar a Internet no arquivo
+	supracitado;
+	- Adicionada a interface do leitor de feeds e a ação para os botões
+	acessarem-no.
+2012.0.3 (24-25/12/2011)
+	- Corrigidos e melhorados pequenos aspectos no design das telas;
+	- Implementada a funcionalidade do leitor de feeds.
+	- CORRIGIDO: os links da tela Sobre agora são clicáveis;
+	- Adicionada a tela de autores;
+
+2012.0.4 (26/12/2011)
+	- Adicionada função para tornar a exibição da data do post mais amigável;
+	- Alterado o ícone padrão do aplicativo;
