@@ -1,14 +1,13 @@
 package org.espiritolivre.revista.android;
 
-import org.espiritolivre.revista.android.R;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.content.Intent;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
     private static final int REQUEST_CODE = 10;
@@ -28,11 +27,6 @@ public class MainActivity extends Activity implements OnClickListener {
         // Botao ultimos comentarios
         Button thebtnLatestComments = (Button) findViewById(R.id.btnLatestComments);
         thebtnLatestComments.setOnClickListener(this);
-
-        // Botao Sobre
-        Button thebtnAbout = (Button) findViewById(R.id.btnAbout);
-        thebtnAbout.setOnClickListener(this);
-
     }
 
     // E aqui declaramos as acoes num loop switch:
@@ -61,22 +55,23 @@ public class MainActivity extends Activity implements OnClickListener {
             case R.id.btnLatestComments: // Botao ultimos comentarios
                 startTheActivity("Últimos comentários", "http://espacoliberdade.blog.br/blog/comments/feed/");
                 break;
-            case R.id.btnAbout: // Botao Sobre
-                Intent iAbout = new Intent(MainActivity.this, AboutActivity.class);
-                startActivity(iAbout);
-                break;
         }
 
     }
-
-// Agora vamos gerenciar o coigo/mensagem de erro do FeedReader quando ele retornar
-
+    
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
-        Bundle extras = intent.getExtras();
-        TextView theStatus = (TextView) findViewById(R.id.statusMsg);
-        theStatus.setText(extras.getString("returnKey"));
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	
+    	MenuItem sobre = menu.add(R.string.about);
+    	sobre.setIcon(android.R.drawable.ic_menu_info_details);
+    	sobre.setIntent(new Intent(MainActivity.this, AboutActivity.class));
+    	
+    	return super.onCreateOptionsMenu(menu);
     }
-
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	startActivity(item.getIntent());
+    	return super.onOptionsItemSelected(item);
+    }
 }

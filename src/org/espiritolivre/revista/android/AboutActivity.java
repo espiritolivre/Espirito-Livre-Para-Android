@@ -1,14 +1,10 @@
 package org.espiritolivre.revista.android;
 
-import android.content.pm.PackageManager;
-import android.util.Log;
-import android.widget.Toast;
-import org.espiritolivre.revista.android.R;
-
 import android.app.Activity;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 /**

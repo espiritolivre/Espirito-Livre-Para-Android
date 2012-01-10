@@ -132,6 +132,7 @@ public class FeedReaderActivity extends ListActivity {
 
     @Override
     public void finish() {
+    	// TODO: Não tem mais a mensaagem do último feed lido. Melhor gravar os que foram lidos.
         Intent data = new Intent();
         data.putExtra("returnKey", "Último feed lido: " + theLastFeed);
         setResult(RESULT_OK, data);
