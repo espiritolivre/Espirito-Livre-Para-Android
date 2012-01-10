@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnAuthKleberson"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/authKleberson" />
-    
+            android:id="@+id/btnAuthKleberson"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authKleberson"/>
+
     <Button
-        android:id="@+id/btnAuthAndre"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/authAndre" />
-    
+            android:id="@+id/btnAuthAndre"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authAndre"/>
+
     <Button
-        android:id="@+id/btnAuthCleiton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/authCleiton" />
-    
+            android:id="@+id/btnAuthCleiton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authCleiton"/>
+
     <Button
-        android:id="@+id/btnAuthF3N1X"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/authF3N1X" />
-    
+            android:id="@+id/btnAuthF3N1X"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authF3N1X"/>
+
     <Button
-        android:id="@+id/btnAuthChico"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/authChico" />
-    
+            android:id="@+id/btnAuthChico"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authChico"/>
+
 </LinearLayout>
     

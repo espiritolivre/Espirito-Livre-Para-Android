@@ -4,41 +4,45 @@
     <!--  Valores globais -->
     <string name="app_name">Revista Espírito Livre</string>
     <string name="nodata">Sem dados</string>
-    
+
     <!--  Atividade principal -->
-    
+
     <string name="latest_articles">Últimos artigos</string>
     <string name="latest_comments">Últimos comentários</string>
     <string name="authors">Autores</string>
     <string name="about">Sobre</string>
     <string name="defstatus">Selecione o feed desejado.</string>
-    
+
     <!-- AboutActivity : tela com informações de versão -->
-    
+
     <string name="version_info">Versão</string>
-    <string name="copyleft_notice">Copyleft © 2012 Revista Espírito Livre\n       Desenvolvido por André F. Machado        (rcsilva83 at gmail dot com )\n\n</string>
-      <string name="license_information">
+    <string name="copyleft_notice">Copyleft © 2012 Revista Espírito Livre\n Desenvolvido por André F. Machado (rcsilva83
+        at gmail dot com )\n\n
+    </string>
+    <string name="license_information">
         Este programa é software livre; você pode redistribuí-lo\n
         e/ou modificá-lo sob os termos da Licença Pública Geral GNU,\n
         conforme publicada pela Free Software Foundation tanto na versão 3\n
         ou (a seu critério) posterior.\n\n
         Este programa é distribuído na esperança que possa ser útil, mas\n
         sem nenhuma garantia. Veja a Licença Pública Geral GNU para\n
-         maiores detalhes.
+        maiores detalhes.
     </string>
-   <string name="social_links">\n\n
-       Site: <a href="http://www.espacoliberdade.blog.br">
-       www.espacoliberdade.blog.br</a>\n
-       Twitter: <a href="http://twitter.com/espacoliberdade">
-       twitter.com/espacoliberdade</a>\n
-       Identica: <a href="http://identi.ca/espacoliberdade">
-       identi.ca/espacoliberdade</a>
-   </string>
-   
-   <!-- AuthorsActivity : tela com nome dos autores -->
-   <string name="authAndre">André Machado</string>
-   <string name="authCleiton">Cleiton Lima</string>
-   <string name="authF3N1X">F3N1X</string>
-   <string name="authChico">Chico</string>
-   <string name="authKleberson">Kleberson Ventura</string>
+    <string name="social_links">\n\n
+        Site:<a href="http://www.espacoliberdade.blog.br">
+            www.espacoliberdade.blog.br</a>\n
+        Twitter:<a href="http://twitter.com/espacoliberdade">
+            twitter.com/espacoliberdade</a>\n
+        Identica:
+        <a href="http://identi.ca/espacoliberdade">
+            identi.ca/espacoliberdade
+        </a>
+    </string>
+
+    <!-- AuthorsActivity : tela com nome dos autores -->
+    <string name="authAndre">André Machado</string>
+    <string name="authCleiton">Cleiton Lima</string>
+    <string name="authF3N1X">F3N1X</string>
+    <string name="authChico">Chico</string>
+    <string name="authKleberson">Kleberson Ventura</string>
 </resources>

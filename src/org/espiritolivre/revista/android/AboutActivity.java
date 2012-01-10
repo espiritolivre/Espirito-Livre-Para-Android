@@ -14,20 +14,20 @@ public class AboutActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
-        
+
         // Obtendo informacoes da versao do aplicativo a partir
         // do AndroidManifest.xml
         PackageInfo pinfo;
-		try {
-			pinfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
-	        String VersionName = pinfo.versionName;
-	        
-	        // Agora vamos colocar isso no textview correspondente
-	        TextView tvVersion = (TextView) findViewById(R.id.about_version);
-	        tvVersion.setText("Versão " + VersionName + "\n");
-		} catch (NameNotFoundException e) {
-			// TODO Fazer um tratamento mais adequado.
-			e.printStackTrace();
-		}
+        try {
+            pinfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
+            String VersionName = pinfo.versionName;
+
+            // Agora vamos colocar isso no textview correspondente
+            TextView tvVersion = (TextView) findViewById(R.id.about_version);
+            tvVersion.setText("Versão " + VersionName + "\n");
+        } catch (NameNotFoundException e) {
+            // TODO Fazer um tratamento mais adequado.
+            e.printStackTrace();
+        }
     }
 }
