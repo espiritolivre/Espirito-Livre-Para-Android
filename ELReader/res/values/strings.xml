@@ -2,7 +2,7 @@
 <resources>
 
     <!--  Valores globais -->
-    <string name="app_name">Espaço Liberdade</string>
+    <string name="app_name">Revista Espírito Livre</string>
     <string name="nodata">Sem dados</string>
     
     <!--  Atividade principal -->
@@ -16,10 +16,7 @@
     <!-- AboutActivity : tela com informações de versão -->
     
     <string name="version_info">Versão</string>
-    <string name="copyleft_notice">
-        Copyleft &#169; 2012 Espaço Liberdade\n
-        Desenvolvido por André F. Machado 
-        (andreferreiramachado at gmail dot com )\n\n</string>
+    <string name="copyleft_notice">Copyleft © 2012 Revista Espírito Livre\n       Desenvolvido por André F. Machado        (rcsilva83 at gmail dot com )\n\n</string>
       <string name="license_information">
         Este programa é software livre; você pode redistribuí-lo\n
         e/ou modificá-lo sob os termos da Licença Pública Geral GNU,\n
