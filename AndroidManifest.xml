@@ -22,7 +22,6 @@
         <activity android:name=".AboutActivity"></activity>
         <activity android:name=".FeedReaderActivity"></activity>
         <activity android:name=".ShowDetailsActivity"></activity>
-        <activity android:name="org.espiritolivre.revista.android.AuthorsActivity"></activity>
     </application>
 
 </manifest>

@@ -29,10 +29,6 @@ public class MainActivity extends Activity implements OnClickListener {
         Button thebtnLatestComments = (Button) findViewById(R.id.btnLatestComments);
         thebtnLatestComments.setOnClickListener(this);
 
-        // Botao Autores
-        Button thebtnAuthors = (Button) findViewById(R.id.btnAuthors);
-        thebtnAuthors.setOnClickListener(this);
-
         // Botao Sobre
         Button thebtnAbout = (Button) findViewById(R.id.btnAbout);
         thebtnAbout.setOnClickListener(this);
@@ -58,17 +54,12 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     public void onClick(View v) {
-        // TODO Auto-generated method stub
         switch (v.getId()) {
             case R.id.btnLatestArticles: // Botao ultimos artigos
                 startTheActivity("Últimos artigos", "http://espacoliberdade.blog.br/blog/feed/");
                 break;
             case R.id.btnLatestComments: // Botao ultimos comentarios
                 startTheActivity("Últimos comentários", "http://espacoliberdade.blog.br/blog/comments/feed/");
-                break;
-            case R.id.btnAuthors: // Botao Autores
-                Intent iAuth = new Intent(MainActivity.this, AuthorsActivity.class);
-                startActivity(iAuth);
                 break;
             case R.id.btnAbout: // Botao Sobre
                 Intent iAbout = new Intent(MainActivity.this, AboutActivity.class);

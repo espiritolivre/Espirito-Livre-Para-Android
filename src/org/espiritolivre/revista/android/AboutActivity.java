@@ -1,5 +1,8 @@
 package org.espiritolivre.revista.android;
 
+import android.content.pm.PackageManager;
+import android.util.Log;
+import android.widget.Toast;
 import org.espiritolivre.revista.android.R;
 
 import android.app.Activity;
@@ -8,6 +11,9 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.widget.TextView;
 
+/**
+ * Tela "Sobre"
+ */
 public class AboutActivity extends Activity {
 
     @Override
@@ -15,19 +21,25 @@ public class AboutActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
 
-        // Obtendo informacoes da versao do aplicativo a partir
-        // do AndroidManifest.xml
-        PackageInfo pinfo;
-        try {
-            pinfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
-            String VersionName = pinfo.versionName;
+        String versionName = getVersionName();
 
-            // Agora vamos colocar isso no textview correspondente
-            TextView tvVersion = (TextView) findViewById(R.id.about_version);
-            tvVersion.setText("Versão " + VersionName + "\n");
+        TextView tvVersion = (TextView) findViewById(R.id.about_version);
+        String versionLabel = getString(R.string.version);
+        tvVersion.setText(versionLabel + " " + versionName);
+    }
+
+    /**
+     * Obtém nome da versão do aplicativo a partir do AndroidManifest.xml
+     *
+     * @return Nome da versão do aplicativo
+     */
+    private String getVersionName() {
+        try {
+            PackageInfo pinfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
+            return pinfo.versionName;
         } catch (NameNotFoundException e) {
-            // TODO Fazer um tratamento mais adequado.
-            e.printStackTrace();
+            Log.e("EspiritoLivre:AboutActivity", e.getMessage());
+            return null;
         }
     }
 }

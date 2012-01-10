@@ -15,34 +15,23 @@
 
     <!-- AboutActivity : tela com informações de versão -->
 
-    <string name="version_info">Versão</string>
-    <string name="copyleft_notice">Copyleft © 2012 Revista Espírito Livre\n Desenvolvido por André F. Machado (rcsilva83
-        at gmail dot com )\n\n
+    <string name="version">Versão</string>
+    <string name="copyleft_notice">
+        Copyleft © 2012 Revista Espírito Livre\n Desenvolvido por Rodrigo Carvalho (rcsilva83at gmail dot com )
     </string>
     <string name="license_information">
-        Este programa é software livre; você pode redistribuí-lo\n
-        e/ou modificá-lo sob os termos da Licença Pública Geral GNU,\n
-        conforme publicada pela Free Software Foundation tanto na versão 3\n
-        ou (a seu critério) posterior.\n\n
-        Este programa é distribuído na esperança que possa ser útil, mas\n
-        sem nenhuma garantia. Veja a Licença Pública Geral GNU para\n
+        Este programa é software livre; você pode redistribuí-lo
+        e/ou modificá-lo sob os termos da Licença Pública Geral GNU,
+        conforme publicada pela Free Software Foundation tanto na versão 3
+        ou (a seu critério) posterior.\n\nEste programa é distribuído na esperança que possa ser útil, mas
+        sem nenhuma garantia. Veja a Licença Pública Geral GNU para
         maiores detalhes.
     </string>
-    <string name="social_links">\n\n
-        Site:<a href="http://www.espacoliberdade.blog.br">
-            www.espacoliberdade.blog.br</a>\n
-        Twitter:<a href="http://twitter.com/espacoliberdade">
-            twitter.com/espacoliberdade</a>\n
-        Identica:
-        <a href="http://identi.ca/espacoliberdade">
-            identi.ca/espacoliberdade
-        </a>
+    <string name="social_links">
+        Site: <a href="http://www.revista.espiritolivre.org/">revista.espiritolivre.org</a>\n
+        Twitter: <a href="http://twitter.com/EspiritoLivre">twitter.com/EspiritoLivre</a>\n
+        Identica: <a href="http://identi.ca/revistaespiritolivre">identi.ca/revistaespiritolivre</a>\n
+        Facebook: <a href="http://facebook.com/RevistaEspiritoLivre">facebook.com/RevistaEspiritoLivre</a>
     </string>
 
-    <!-- AuthorsActivity : tela com nome dos autores -->
-    <string name="authAndre">André Machado</string>
-    <string name="authCleiton">Cleiton Lima</string>
-    <string name="authF3N1X">F3N1X</string>
-    <string name="authChico">Chico</string>
-    <string name="authKleberson">Kleberson Ventura</string>
 </resources>
