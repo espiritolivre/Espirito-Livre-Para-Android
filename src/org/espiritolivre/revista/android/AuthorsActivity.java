@@ -11,14 +11,13 @@ import android.widget.Button;
 
 public class AuthorsActivity extends Activity implements OnClickListener {
 	private static final int REQUEST_CODE =10;
-	
-	/** Called when the activity is first created. */
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.authors);
      
-        // Vamos criar um bot�o para cada autor do site
+        // Vamos criar um botao para cada autor do site
         
         Button btnKleberson = (Button)findViewById(R.id.btnAuthKleberson);
         btnKleberson.setOnClickListener(this);
@@ -37,7 +36,7 @@ public class AuthorsActivity extends Activity implements OnClickListener {
         
     }
 
-// N�o � elegante mas funciona...    
+// Nao e elegante mas funciona...
 public void startTheActivity2(String theTitle, String theURL) {
     	Intent i = new Intent(AuthorsActivity.this, FeedReaderActivity.class);
     	i.putExtra("feedTitle", theTitle);
@@ -55,9 +54,9 @@ public void onClick(View v) {
 		//startActivityForResult(i1, REQUEST_CODE);
 		break; 
 	case R.id.btnAuthAndre:
-		startTheActivity2("Andr� Machado", "http://espacoliberdade.blog.br/blog/author/andremachado/feed");
+		startTheActivity2("Andrá Machado", "http://espacoliberdade.blog.br/blog/author/andremachado/feed");
 		//Intent i2 = new Intent(AuthorsActivity.this, FeedReaderActivity.class);
-		//i2.putExtra("feedTitle", "Andr� Machado");
+		//i2.putExtra("feedTitle", "André Machado");
 		//i2.putExtra("feedURL", "http://espacoliberdade.blog.br/blog/author/andremachado/feed");
 		//startActivityForResult(i2, REQUEST_CODE);
 		break;

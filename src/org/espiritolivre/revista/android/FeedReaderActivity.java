@@ -26,46 +26,44 @@ import android.widget.ArrayAdapter;
 
 
 public class FeedReaderActivity extends ListActivity {
-    /** Called when the activity is first created. */
+
 	String theLastFeed = "";
 	String streamTitle = "";
 	private RSSFeed myRSSFeed = null;
-	
-	//private List<String> item = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.feedreader);
         
-        // As vers�es do Android superiores � 3  implementam um  modo
+        // As versoes do Android superiores a 3  implementam um  modo
         // protegido que impede o sistema de acessar  discos e a rede
         // na atividade principal. Assim vamos desabilitar o recurso.
-        // O correto, no entanto, seria utilizarmos atividades ass�n-
-        // cronas. Note que esta declara��o n�o � necess�ria se   es-
-        // tamos desenvolvendo para as vers�es 1.x e 2.x , ou   seja,
-        // voc� deve comentar as duas linhas abaixo se   tiver  essas
-        // vers�es como alvo.
+        // O correto, no entanto, seria utilizarmos atividades assin-
+        // cronas. Note que esta declaracao nao e necessaria se   es-
+        // tamos desenvolvendo para as versoes 1.x e 2.x , ou   seja,
+        // voce deve comentar as duas linhas abaixo se   tiver  essas
+        // versoes como alvo.
         
         //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitNetwork().build();
         //StrictMode.setThreadPolicy(policy);
         
-        // Obtendo a URL e o t�tulo do feed
+        // Obtendo a URL e o titulo do feed
         Bundle extras = getIntent().getExtras();
         // Temos extras?
         if (extras == null) {
         	return;
         }
-        // Colocando o t�tulo e a URL em vari�veis
+        // Colocando o titulo e a URL em variaveis
         String theFeedTitle = extras.getString("feedTitle");
         String theFeedURL = extras.getString("feedURL");
-        // �ltima verifica��o e exibi��o do feed
+        // ultima verificacao e exibicao do feed
         if (theFeedTitle != null && theFeedURL != null) {
         	
         	theLastFeed = theFeedTitle;
         	
-        	// Aqui come�a a implementa��o do leitor RSS!
-        	// Cr�ditos aos tutoriais de http://android-er.blogspot.com/
+        	// Aqui comeca a implementacao do leitor RSS!
+        	// Creditos aos tutoriais de http://android-er.blogspot.com/
         	        	
         	// No manipulador a seguir vamos obter o feed RSS de fr_URL
         	
@@ -79,9 +77,9 @@ public class FeedReaderActivity extends ListActivity {
         		InputSource myInputSource = new InputSource(rssURL.openStream());
         		myXMLReader.parse(myInputSource);
         		
-        		// Modifica��o vers�o 2012.0.4
+        		// Modificacao versao 2012.0.4
         		myRSSFeed = myRSSHandler.getFeed();
-        		// Fim da modifica��o
+        		// Fim da modificacao
         		
         	} catch (MalformedURLException e) {
         		e.printStackTrace();
@@ -97,7 +95,7 @@ public class FeedReaderActivity extends ListActivity {
         		
         	}
         	
-        	// Modifica��o vers�o 2012.0.3
+        	// Modificacao versao 2012.0.3
         	if (myRSSFeed!=null)
         	 {
         	  TextView feedTitle = (TextView)findViewById(R.id.feedtitle);
@@ -108,7 +106,7 @@ public class FeedReaderActivity extends ListActivity {
         	  feedDescription.setText(myRSSFeed.getDescription());
         	  feedPubdate.setText(myRSSFeed.getPubdate());
         	  feedLink.setText(myRSSFeed.getLink());
-    		// Fim da modifica��o
+    		// Fim da modificacao
         	
         	  ArrayAdapter<RSSItem> adapter =
         			   new ArrayAdapter<RSSItem>(this,
@@ -121,7 +119,6 @@ public class FeedReaderActivity extends ListActivity {
 
         @Override
         protected void onListItemClick(ListView l, View v, int position, long id) {
-         // TODO Auto-generated method stub
          Intent intent = new Intent(this,ShowDetailsActivity.class);
          Bundle bundle = new Bundle();
          bundle.putString("keyTitle", myRSSFeed.getItem(position).getTitle());
@@ -137,7 +134,7 @@ public class FeedReaderActivity extends ListActivity {
     @Override
     public void finish(){
     	Intent data = new Intent();
-    	data.putExtra("returnKey", "�ltimo feed lido: " + theLastFeed);
+    	data.putExtra("returnKey", "Último feed lido: " + theLastFeed);
     	setResult(RESULT_OK, data);
     	super.finish();
     }

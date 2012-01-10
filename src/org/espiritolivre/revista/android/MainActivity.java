@@ -13,43 +13,42 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener  {
 	private static final int REQUEST_CODE =10;
 	
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        // Aqui n�s declaramos todos os bot�es da interface que v�o ter
-        // uma a��o associada a eles
+        // Aqui nos declaramos todos os botoes da interface que vao ter
+        // uma acao associada a eles
         
-        // Bot�o �ltimos artigos
+        // Botao ultimos artigos
         Button thebtnLatestArticles = (Button)findViewById(R.id.btnLatestArticles);
         thebtnLatestArticles.setOnClickListener(this);
         
-        // Bot�o �ltimos coment�rios
+        // Botao ultimos comentarios
         Button thebtnLatestComments = (Button)findViewById(R.id.btnLatestComments);
         thebtnLatestComments.setOnClickListener(this);
         
-        // Bot�o Autores
+        // Botao Autores
         Button thebtnAuthors = (Button)findViewById(R.id.btnAuthors);
         thebtnAuthors.setOnClickListener(this);
         
-        // Bot�o Sobre
+        // Botao Sobre
         Button thebtnAbout = (Button)findViewById(R.id.btnAbout);
         thebtnAbout.setOnClickListener(this);
         
     }
 
-    // E aqui declaramos as a��es num loop switch:
+    // E aqui declaramos as acoes num loop switch:
     
-    // Aten��o se voc� quiser modificar: os dois primeiros cases abaixo
+    // Atencao se voce quiser modificar: os dois primeiros cases abaixo
     // funcionam de forma muito similar: eles chamam a tela da activity
-    // FeedReader e passam a ela dois par�metros: feedTitle e feedURL.
-    // O primeiro � o nome do feed, por exemplo "�ltimos artigos" e o
-    // segundo � a sua URL. Se quiser adaptar para os seu site, apenas
-    // modifique essas informa��es com os dados corretos! N�o mexa no resto!
-    // Se quiser adicionar mais bot�es, declare-os no main.xml, siga o
-    // exemplo acima de declara��o de Button e adicione um novo case abaixo.
+    // FeedReader e passam a ela dois parametros: feedTitle e feedURL.
+    // O primeiro e o nome do feed, por exemplo "ultimos artigos" e o
+    // segundo e a sua URL. Se quiser adaptar para os seu site, apenas
+    // modifique essas informacoes com os dados corretos! Nao mexa no resto!
+    // Se quiser adicionar mais botoes, declare-os no main.xml, siga o
+    // exemplo acima de declaracao de Button e adicione um novo case abaixo.
 
 public void startTheActivity(String theTitle, String theURL) {
 	Intent i = new Intent(MainActivity.this, FeedReaderActivity.class);
@@ -61,17 +60,17 @@ public void startTheActivity(String theTitle, String theURL) {
 public void onClick(View v) {
 	// TODO Auto-generated method stub
 	   switch(v.getId()) {
-	   case R.id.btnLatestArticles: // Bot�o �ltimos artigos
-		   startTheActivity("�ltimos artigos", "http://espacoliberdade.blog.br/blog/feed/");
+	   case R.id.btnLatestArticles: // Botao ultimos artigos
+		   startTheActivity("Últimos artigos", "http://espacoliberdade.blog.br/blog/feed/");
 		   break; 
-	   case R.id.btnLatestComments: // Bot�o �ltimos coment�rios
-		   startTheActivity("�ltimos coment�rios", "http://espacoliberdade.blog.br/blog/comments/feed/");
+	   case R.id.btnLatestComments: // Botao ultimos comentarios
+		   startTheActivity("Últimos comentários", "http://espacoliberdade.blog.br/blog/comments/feed/");
 		   break;
-	   case R.id.btnAuthors: // Bot�o Autores
+	   case R.id.btnAuthors: // Botao Autores
 		   Intent iAuth = new Intent(MainActivity.this, AuthorsActivity.class);
 		   startActivity(iAuth);
 		   break;
-	   case R.id.btnAbout: // Bot�o Sobre
+	   case R.id.btnAbout: // Botao Sobre
 		   Intent iAbout = new Intent(MainActivity.this, AboutActivity.class);
 		   startActivity(iAbout);
 		   break;
@@ -79,7 +78,7 @@ public void onClick(View v) {
 	
 }
 
-// Agora vamos gerenciar o c�digo/mensagem de erro do FeedReader quando ele retornar
+// Agora vamos gerenciar o coigo/mensagem de erro do FeedReader quando ele retornar
 
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent intent) {

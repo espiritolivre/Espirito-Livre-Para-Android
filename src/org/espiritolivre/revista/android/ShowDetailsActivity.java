@@ -13,7 +13,6 @@ public class ShowDetailsActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-	 // TODO Auto-generated method stub
 	 super.onCreate(savedInstanceState);
 	 setContentView(R.layout.details);
 	 
@@ -23,10 +22,10 @@ public class ShowDetailsActivity extends Activity {
 	 TextView detailsDescription = (TextView)findViewById(R.id.detailsdescription);
 	 TextView detailsLink = (TextView)findViewById(R.id.detailslink);
 
-	 // Obtendo os par�metros
+	 // Obtendo os parametros
 	 Bundle bundle = this.getIntent().getExtras();
 	 
-	 // Exibindo as informa��es
+	 // Exibindo as informacoes
 	 detailsTitle.setText(bundle.getString("keyTitle") + "\n");
 	 detailsPubdate.setText("Publicado " + tratarData(bundle.getString("keyPubdate")) + "\n");
 	 detailsDescription.setText(bundle.getString("keyDescription"));
@@ -35,30 +34,30 @@ public class ShowDetailsActivity extends Activity {
 	}
 	
 	String tratarData(String dataDoItem) {
-		// Por padr�o, o feed do WordPress retorna a data do post na forma
-		// Tue, 20 Dec 2011 11:30:12 +0000 , o   que � evidentemente pouco
-		// amig�vel. Nesta fun��o, vamos tratar essa entrada e transform�-
-		// la em algo como "Domingo, 20 de Dezembro de 2011 �s 08:30". N�o
-		// podemos nos esquecer do fuso-hor�rio que, em nosso caso, � -3h!
+		// Por padrao, o feed do WordPress retorna a data do post na forma
+		// Tue, 20 Dec 2011 11:30:12 +0000 , o   que e evidentemente pouco
+		// amigavel. Nesta funcao, vamos tratar essa entrada e transforma-
+		// la em algo como "Domingo, 20 de Dezembro de 2011 as 08:30". Nao
+		// podemos nos esquecer do fuso-horario que, em nosso caso, e -3h!
 		
 		// Primeiro, vamos declarar um mapa que vai relacionar os dias  da
-		// semana em Ingl�s com os dias da semana  em Portugu�s:
+		// semana em Ingles com os dias da semana  em Portugues:
 		
 		Map<String,String> dias = new HashMap<String,String>();
 		dias.put("Sun", "domingo");
 		dias.put("Mon", "segunda-feira");
-		dias.put("Tue", "ter�a-feira");
+		dias.put("Tue", "terça-feira");
 		dias.put("Wed", "quarta-feira");
 		dias.put("Thu", "quinta-feira");
 		dias.put("Fri", "sexta-feira");
-		dias.put("Sat", "s�bado");
+		dias.put("Sat", "sábado");
 		
 		// Agora vamos declarar outro mapa que vai relacionar os meses:
 		
 		Map <String,String> meses = new HashMap<String,String>();
 		meses.put("Jan", "Janeiro");
 		meses.put("Feb","Fevereiro");
-		meses.put("Mar","Mar�o");
+		meses.put("Mar","Março");
 		meses.put("Apr","Abril");
 		meses.put("May","Maio");
 		meses.put("Jun","Junho");
@@ -69,14 +68,14 @@ public class ShowDetailsActivity extends Activity {
 		meses.put("Nov", "Novembro");
 		meses.put("Dec", "Dezembro");
 		
-		// Agora, vamos transformar a data passada como par�metro em um
-		// array atrav�s do m�todo split:
+		// Agora, vamos transformar a data passada como parametro em um
+		// array atraves do metodo split:
 		
 		String d[] = dataDoItem.split("\\s");
 		
-		// split recebe uma express�o regular como par�metro, assim, \\s
-		// representa o espa�o em branco. No entanto, precisamos de  re-
-		// mover a v�rgula ap�s o primeiro campo, correspondente ao  dia
+		// split recebe uma expressao regular como paremetro, assim, \\s
+		// representa o espaco em branco. No entanto, precisamos de  re-
+		// mover a virgula apos o primeiro campo, correspondente ao  dia
 		// da semana:
 		
 		String diaDaSemana = d[0].substring(0, 3);
@@ -89,7 +88,7 @@ public class ShowDetailsActivity extends Activity {
 			diaDaSemana = "";
 		}
 		
-		// Traduzindo o m�s:
+		// Traduzindo o mes:
 		
 		String mes = d[2];
 		
@@ -99,7 +98,7 @@ public class ShowDetailsActivity extends Activity {
 			mes = "";
 		}
 		
-		// Precisamos de diminuir tr�s horas da hora do post
+		// Precisamos de diminuir tres horas da hora do post
 		
 		String hs[] = d[4].split("\\:");
 		String h = hs[0];
@@ -114,7 +113,7 @@ public class ShowDetailsActivity extends Activity {
 		// E finalmente formamos a data!
 		
 		String dataFinal = diaDaSemana + ", " + d[1] + " de " + mes + 
-				" de " + d[3] + " �s " + hora;
+				" de " + d[3] + " às " + hora;
 		
 		return dataFinal;
 	}

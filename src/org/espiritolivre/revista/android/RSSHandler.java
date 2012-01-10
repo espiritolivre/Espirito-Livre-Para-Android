@@ -26,20 +26,17 @@ public class RSSHandler extends DefaultHandler {
 
 	@Override
 	public void startDocument() throws SAXException {
-		// TODO Auto-generated method stub
 		feed = new RSSFeed();
 		item = new RSSItem();
 	}
 
 	@Override
 	public void endDocument() throws SAXException {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void startElement(String uri, String localName, String qName,
 	Attributes attributes) throws SAXException {
-		// TODO Auto-generated method stub
 
 		if (localName.equalsIgnoreCase("item")){
 			itemFound = true;
@@ -68,7 +65,6 @@ public class RSSHandler extends DefaultHandler {
 	@Override
 	public void endElement(String uri, String localName, String qName)
 	throws SAXException {
-		// TODO Auto-generated method stub
 		if (localName.equalsIgnoreCase("item")){
 			feed.addItem(item);
 		}
@@ -77,7 +73,6 @@ public class RSSHandler extends DefaultHandler {
 	@Override
 	public void characters(char[] ch, int start, int length)
 	throws SAXException {
-	// TODO Auto-generated method stub
 
 	String strCharacters = new String(ch,start,length);
 
