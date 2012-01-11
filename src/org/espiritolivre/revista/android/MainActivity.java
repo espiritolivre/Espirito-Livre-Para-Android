@@ -15,10 +15,12 @@ public class MainActivity extends Activity {
     private static final int REQUEST_CODE = 10;
     
     private static final String[] LABELS_CATEGORIAS = new String[]
-    		{"Edições", "Notícias"};
+    		{"Edições", "Notícias", "Artigos"};
 
     private static final String[] FEEDS_CATEGORIAS = new String[]
-    		{"http://www.revista.espiritolivre.org/category/lancamentos/feed", "http://www.revista.espiritolivre.org/category/noticias/feed"};
+    		{"http://www.revista.espiritolivre.org/category/lancamentos/feed",
+             "http://www.revista.espiritolivre.org/category/noticias/feed",
+             "http://www.revista.espiritolivre.org/category/artigos/feed"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
