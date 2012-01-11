@@ -13,21 +13,32 @@ import android.widget.ListView;
 public class MainActivity extends Activity {
 	
     private static final int REQUEST_CODE = 10;
-    
-    private static final String[] LABELS_CATEGORIAS = new String[]
-    		{"Edições", "Notícias", "Artigos"};
 
-    private static final String[] FEEDS_CATEGORIAS = new String[]
-    		{"http://www.revista.espiritolivre.org/category/lancamentos/feed",
-             "http://www.revista.espiritolivre.org/category/noticias/feed",
-             "http://www.revista.espiritolivre.org/category/artigos/feed"};
+    /**
+     * Retorna as categorias usadas no menu. O mais correto seria ter uma constante, mas o ciclo de vida da Activity não
+     * possibilita recuperar strings do R no momento da inicialização da classe.
+     *
+     * @return Categorias usadas no menu.
+     */
+    private String[] getCategorias() {
+        return new String[] {
+                super.getString(R.string.edicoes),
+                super.getString(R.string.noticias),
+                super.getString(R.string.artigos)
+        };
+    }
+
+    private static final String[] FEEDS_CATEGORIAS = new String[] {
+            "http://www.revista.espiritolivre.org/category/lancamentos/feed",
+            "http://www.revista.espiritolivre.org/category/noticias/feed",
+            "http://www.revista.espiritolivre.org/category/artigos/feed"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, LABELS_CATEGORIAS);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getCategorias());
         
         ListView categorias = (ListView) findViewById(R.id.categorias);
         categorias.setAdapter(adapter);
@@ -35,7 +46,7 @@ public class MainActivity extends Activity {
         categorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			public void onItemClick(AdapterView<?> adapter, View view, int posicao, long id) {
-				exibirFeed(LABELS_CATEGORIAS[posicao], FEEDS_CATEGORIAS[posicao]);
+				exibirFeed(getCategorias()[posicao], FEEDS_CATEGORIAS[posicao]);
 			}
 		});
     }
