@@ -3,28 +3,10 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:orientation="vertical">
-
-
-    <!--
-    <Button
-            android:id="@+id/btnLatestArticles"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/latest_articles"/>
-
-    <Button
-            android:id="@+id/btnLatestComments"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/latest_comments"/>
-    -->
-
     <ListView
         android:id="@+id/categorias"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <!-- Preview: listitem=@android:layout/simple_list_item_2 -->
+        android:layout_height="fill_parent">
     </ListView>
 
 </LinearLayout>
