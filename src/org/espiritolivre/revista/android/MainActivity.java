@@ -1,8 +1,8 @@
 package org.espiritolivre.revista.android;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 	
     private static final int REQUEST_CODE = 10;
 
@@ -57,20 +57,20 @@ public class MainActivity extends Activity {
         i.putExtra("feedURL", theURL);
         startActivityForResult(i, REQUEST_CODE);
     }
-    
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-    	
-    	MenuItem sobre = menu.add(R.string.about);
-    	sobre.setIcon(android.R.drawable.ic_menu_info_details);
-    	sobre.setIntent(new Intent(MainActivity.this, AboutActivity.class));
-    	
-    	return super.onCreateOptionsMenu(menu);
-    }
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	startActivity(item.getIntent());
-    	return super.onOptionsItemSelected(item);
-    }
+//    TODO: PASSAR PARA A ACTIONBAR
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//    	
+//    	MenuItem sobre = menu.add(R.string.about);
+//    	sobre.setIcon(android.R.drawable.ic_menu_info_details);
+//    	sobre.setIntent(new Intent(MainActivity.this, AboutActivity.class));
+//    	
+//    	return super.onCreateOptionsMenu(menu);
+//    }
+//    
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//    	startActivity(item.getIntent());
+//    	return super.onOptionsItemSelected(item);
+//    }
 }

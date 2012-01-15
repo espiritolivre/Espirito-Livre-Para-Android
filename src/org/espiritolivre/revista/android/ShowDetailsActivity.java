@@ -3,13 +3,11 @@ package org.espiritolivre.revista.android;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.espiritolivre.revista.android.R;
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
-public class ShowDetailsActivity extends Activity {
+public class ShowDetailsActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

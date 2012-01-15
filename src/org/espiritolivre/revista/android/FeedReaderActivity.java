@@ -12,20 +12,17 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
-import org.espiritolivre.revista.android.R;
-
-import android.app.ListActivity;
-import android.os.Bundle;
-// Comente a linha abaixo se estiver desenvolvendo para 2.x
-//import android.os.StrictMode;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.ArrayAdapter;
 
 
-public class FeedReaderActivity extends ListActivity {
+public class FeedReaderActivity extends FragmentActivity {
 
     String theLastFeed = "";
     String streamTitle = "";
@@ -110,25 +107,28 @@ public class FeedReaderActivity extends ListActivity {
                 ArrayAdapter<RSSItem> adapter =
                         new ArrayAdapter<RSSItem>(this,
                                 android.R.layout.simple_list_item_1, myRSSFeed.getList());
-                setListAdapter(adapter);
+                
+                ListView feedlist = (ListView) findViewById(R.id.feedlist);
+                feedlist.setAdapter(adapter);
+                feedlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+					public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
+				        Intent intent = new Intent(FeedReaderActivity.this, ShowDetailsActivity.class);
+				        Bundle bundle = new Bundle();
+				        bundle.putString("keyTitle", myRSSFeed.getItem(position).getTitle());
+				        bundle.putString("keyDescription", myRSSFeed.getItem(position).getDescription());
+				        bundle.putString("keyLink", myRSSFeed.getItem(position).getLink());
+				        bundle.putString("keyPubdate", myRSSFeed.getItem(position).getPubdate());
+
+				        intent.putExtras(bundle);
+				        startActivity(intent);
+					}
+                	
+				});
 
             }
         }
     }
-
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        Intent intent = new Intent(this, ShowDetailsActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("keyTitle", myRSSFeed.getItem(position).getTitle());
-        bundle.putString("keyDescription", myRSSFeed.getItem(position).getDescription());
-        bundle.putString("keyLink", myRSSFeed.getItem(position).getLink());
-        bundle.putString("keyPubdate", myRSSFeed.getItem(position).getPubdate());
-
-        intent.putExtras(bundle);
-        startActivity(intent);
-    }
-
 
     @Override
     public void finish() {

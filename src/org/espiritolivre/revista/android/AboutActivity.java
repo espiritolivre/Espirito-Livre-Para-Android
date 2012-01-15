@@ -1,16 +1,16 @@
 package org.espiritolivre.revista.android;
 
-import android.app.Activity;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.TextView;
 
 /**
  * Tela "Sobre"
  */
-public class AboutActivity extends Activity {
+public class AboutActivity extends FragmentActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
