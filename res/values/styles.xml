@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<style name="Theme.EspiritoLivre" parent="@style/Theme.Sherlock.Light" >
+	    <!--  Comentado ate colocar um logo melhor
+	    <item name="abIcon">@drawable/ic_action_logo</item>
+	     -->
+	     <item name="abTitleTextStyle">@style/ActionBar</item>
+	</style>
+	
+	<style name="ActionBar" parent="@style/Theme.Sherlock.Light" >
+	     <item name="android:textColor">#ffffff</item>
+	</style>
 </resources>
