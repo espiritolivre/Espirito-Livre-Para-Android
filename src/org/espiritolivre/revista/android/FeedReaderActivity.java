@@ -32,6 +32,9 @@ public class FeedReaderActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.feedreader);
+        
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_bg));
+        
 
         // As versoes do Android superiores a 3  implementam um  modo
         // protegido que impede o sistema de acessar  discos e a rede

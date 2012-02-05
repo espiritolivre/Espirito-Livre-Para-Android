@@ -13,6 +13,9 @@ public class ShowDetailsActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
+        
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_bg));
+        
 
         // Declarando os objetos da interface
         TextView detailsTitle = (TextView) findViewById(R.id.detailstitle);
